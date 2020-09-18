@@ -1,4 +1,4 @@
-<div class="login-container">
+<!-- <div class="login-container">
     <h2 class="title">Welcome</h2>
     <form class="form-control" #form="ngForm" (ngSubmit)="verify()">
         <input class="input is-primary" name="firstname" type="text" placeholder="Email" [(ngModel)]="email" required>
@@ -11,4 +11,47 @@
             Log In
         </button>
     </form>
-</div>
+</div> -->
+
+<section class="hero is-link is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    <form action="" class="box" #form="ngForm" (ngSubmit)="verify()">
+                        <h2 class="title is-link">Welcome</h2>
+                        <div class="field">
+                            <label for="" class="label">Email</label>
+                            <div class="control has-icons-left">
+                                <input type="input" placeholder="e.g. email@gmail.com" class="input is-link" name="email" [(ngModel)]="email" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label">Password</label>
+                            <div class="control has-icons-left">
+                                <input type="password" placeholder="password" class="input is-link" [(ngModel)]="password" name="password" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="checkbox">
+                                <input type="checkbox">
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="field">
+                            <button class="button is-link" type="submit" [disabled]="!form.valid">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
