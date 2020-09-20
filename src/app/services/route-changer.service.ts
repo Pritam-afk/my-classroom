@@ -9,24 +9,24 @@ export class RouteChangerService {
   public users: UserInfo[] = [];
   public seedData = [
   {
-      email: 'Pritvi',
+      email: 'pritvi@',
       password: 'hash',
-      first_name: 'name',
-      last_name: 'name 1',
+      first_name: 'Pritvi',
+      last_name: 'Majumder',
       role_id: 2
   },
   {
-      email: 'Pritam',
+      email: 'pritam@',
       password: 'hash',
-      first_name: 'name',
-      last_name: 'name 1',
+      first_name: 'Pritam',
+      last_name: 'Roy',
       role_id: 2
   },
   {
-    email: 'Consilious',
+    email: 'consilious@',
     password: 'hash',
-    first_name: 'name',
-    last_name: 'name 1',
+    first_name: 'Consilious',
+    last_name: 'Systems',
     role_id: 1
   },
   ] 

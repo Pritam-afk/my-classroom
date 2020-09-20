@@ -19,9 +19,9 @@
             <div class="columns is-centered">
                 <div class="column is-5-tablet is-4-desktop is-3-widescreen">
                     <form action="" class="box" #form="ngForm" (ngSubmit)="verify()">
-                        <h2 class="title is-link">Welcome</h2>
+                        <h2 class="title has-text-dark">Welcome</h2>
                         <div class="field">
-                            <label for="" class="label">Email</label>
+                            <label for="" class="label has-text-dark">Email</label>
                             <div class="control has-icons-left">
                                 <input type="input" placeholder="e.g. email@gmail.com" class="input is-link" name="email" [(ngModel)]="email" required>
                                 <span class="icon is-small is-left">
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="field">
-                            <label for="" class="label">Password</label>
+                            <label for="" class="label has-text-dark">Password</label>
                             <div class="control has-icons-left">
                                 <input type="password" placeholder="password" class="input is-link" [(ngModel)]="password" name="password" required>
                                 <span class="icon is-small is-left">

@@ -20,21 +20,43 @@ export class UserInfo {
         this._lastName = lastName;
         this._role = role; 
     }
-    get email() {
-        return this._email;
+
+    set firstname(value) {
+        this._firstName = value;
+    }
+
+    get firstname() {
+        return this._firstName
+    }
+
+    set lastname(value) {
+        this._lastName = value;
+    }
+
+    get lastname() {
+        return this._lastName;
     }
 
     set email(value) {
         this._email = value;
     }
 
-    get password() {
-        return this._password;
+    get email() {
+        return this._email;
     }
 
     set password(value) {
         this.password = btoa(value)
     }
+
+    get password() {
+        return this._password;
+    }
+
+    set role(value){
+;    this.role = value;
+    }
+
     get role() {
         return this._role;
     }

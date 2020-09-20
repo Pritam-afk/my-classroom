@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouteChangerService } from "../services/route-changer.service";
 
 @Component({
   selector: 'app-user-view',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserViewComponent implements OnInit {
 
-  constructor() { }
+  public userView = [];
+
+  constructor(
+    private routeChangerService: RouteChangerService,
+  ) { }
 
   ngOnInit(): void {
+    this.userView = this.routeChangerService.users;
   }
 
 }
+
