@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserViewComponent } from './user-view/user-view.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { UserViewComponent } from './user-view/user-view.component';
     DashboardComponent,
     NavbarComponent,
     UserViewComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,11 @@
-export class UserInfo {
+import { Role } from "./role.model";
+
+export class User {
     private _email: string;
-    private _password: string   
+    private _password: string;   
     private _firstName: string;
     private _lastName: string;
-    private _role: number;
+    private _role: Role;
     private _sessionId: string = "";
 
     constructor(
@@ -11,29 +13,29 @@ export class UserInfo {
         password: string,
         firstName: string,
         lastName: string,
-        role: number,
+        role: Role,
     ) 
     {
-        this._email = email; 
-        this._password = password;
-        this._firstName = firstName;
-        this._lastName = lastName;
-        this._role = role; 
+        this.email = email; 
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role; 
     }
 
-    set firstname(value) {
+    set firstName(value) {
         this._firstName = value;
     }
 
-    get firstname() {
+    get firstName() {
         return this._firstName
     }
 
-    set lastname(value) {
+    set lastName(value) {
         this._lastName = value;
     }
 
-    get lastname() {
+    get lastName() {
         return this._lastName;
     }
 
@@ -46,7 +48,7 @@ export class UserInfo {
     }
 
     set password(value) {
-        this.password = btoa(value)
+        this._password = btoa(value)
     }
 
     get password() {
@@ -54,7 +56,7 @@ export class UserInfo {
     }
 
     set role(value){
-;    this.role = value;
+        this._role = value;
     }
 
     get role() {

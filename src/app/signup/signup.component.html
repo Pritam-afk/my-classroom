@@ -1,0 +1,68 @@
+<section class="hero is-link is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                    <form action="" class="box" #form="ngForm">
+                        <h2 class="title has-text-dark">Tell Us Your</h2>
+                        <div class="field">
+                            <label for="" class="label has-text-dark">First Name</label>
+                            <div class="control has-icons-left">
+                                <input type="input" placeholder="First Name" class="input is-link" name="firstname"
+                                    [(ngModel)]="firstName" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label has-text-dark">Last Name</label>
+                            <div class="control has-icons-left">
+                                <input type="input" placeholder="Last Name" class="input is-link" name="lastname"
+                                    [(ngModel)]="lastName" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label has-text-dark">Email</label>
+                            <div class="control has-icons-left">
+                                <input type="input" placeholder="e.g. email@gmail.com" class="input is-link"
+                                    name="email" [(ngModel)]="eMail" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label has-text-dark">Password</label>
+                            <div class="control has-icons-left">
+                                <input type="password" placeholder="Password" class="input is-link" name="password"
+                                    [(ngModel)]="passWord" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="" class="label has-text-dark">Confirm Password</label>
+                            <div class="control has-icons-left">
+                                <input type="password" placeholder="Confirm Password" class="input is-link"
+                                    name="confirm-password" [(ngModel)]="conPassword" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </div>
+                        </div>                        
+                        <div class="field">
+                            <button class="button is-link" type="submit" [disabled]="!form.valid">
+                                Sign Up
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

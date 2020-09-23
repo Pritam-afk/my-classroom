@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserInfo } from "./user.model";
-import { RouteChangerService } from "../services/route-changer.service";
+import { User } from "./user.model";
+import { UserService } from "../services/user.service";
 import { RouterGaurdService } from "../services/router-gaurd.service";
 import { Router } from '@angular/router';
 
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   public verification: boolean;
 
   public constructor(
-    private readonly routeChangerService: RouteChangerService,
+    private readonly userService: UserService,
     private routerGaurd: RouterGaurdService,
     private router: Router
   ) { }
@@ -25,18 +25,18 @@ export class LoginComponent implements OnInit {
     localStorage.removeItem('VERIFIED_USER');
   }
 
-  private routeDashboard(user: UserInfo) {
+  private routeDashboard(user: User) {
     this.router.navigate(['/dashboard/' + user.role]);
     
   }
   
-  public setSessionid(user: UserInfo) {
+  public setSessionid(user: User) {
     user.sessionId = (new Date()).getTime().toString();
   }
 
   public verify() {
-    const users = this.routeChangerService.users;
-    const verifiedUsers = users.filter(user => user.password === this.password && user.email  === this.email);
+    const users = this.userService.users;
+    const verifiedUsers = users.filter(user => user.password === btoa(this.password) && user.email  === this.email);
     if (verifiedUsers.length) { 
         this.setSessionid(verifiedUsers[0]);
         localStorage.setItem('VERIFIED_USER', JSON.stringify(verifiedUsers[0]));

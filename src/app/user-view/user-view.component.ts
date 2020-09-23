@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteChangerService } from "../services/route-changer.service";
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: 'app-user-view',
@@ -9,14 +9,21 @@ import { RouteChangerService } from "../services/route-changer.service";
 export class UserViewComponent implements OnInit {
 
   public userView = [];
+  public teacherUser = [];
+  public studentUser = [];
+  public showUser:string;
 
   constructor(
-    private routeChangerService: RouteChangerService,
+    private userService: UserService,
   ) { }
 
   ngOnInit(): void {
-    this.userView = this.routeChangerService.users;
+    this.userView = this.userService.users;
+    this.showUser = "all";
   }
 
+  showAll() {
+    this.showUser = "all";
+  }
 }
 
