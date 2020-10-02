@@ -1,4 +1,3 @@
 <app-navbar></app-navbar>
-<h1 class="title" *ngIf="teacherMode">Hello Teacher</h1>
-<h1 class="title" *ngIf="!teacherMode">Hello Student</h1>
+<h1 class="title">Hello {{verifiedUser._firstName}}</h1>
 <app-user-view></app-user-view>

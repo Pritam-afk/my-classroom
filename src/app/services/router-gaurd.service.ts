@@ -15,10 +15,8 @@ export class RouterGaurdService implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot): boolean {
     if(localStorage.getItem('VERIFIED_USER')){
       return true;    
-    }
-    else{
+    } else{
       return false;
     }
-    
   }
 }

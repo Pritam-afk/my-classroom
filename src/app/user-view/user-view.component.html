@@ -11,30 +11,12 @@
         </p>
     </div>
     <p class="panel-tabs">
-        <a class="is-active" (click)="showAll()">All</a>
-        <a (click)="filterTeacher()">Teachers</a>
-        <a (click)="filterStudents()">Students</a>
+        <a class="is-active" (click) = "setView('all')">All</a>
+        <a (click) = "setView('Teacher')">Teachers</a>
+        <a (click) = "setView('Student')">Students</a>
     </p>
-    <div *ngIf="showUser === 'all' ">
-        <a class="panel-block is-active" *ngFor="let user of userView">
-            <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true"></i>
-            </span>
-            {{user.firstName}}
-            {{user.lastName}}
-        </a>
-    </div>
-    <div *ngIf="showUser === 'teacher' ">
-        <a class="panel-block is-active" *ngFor="let user of teacherUser">
-            <span class="panel-icon">
-                <i class="fas fa-book" aria-hidden="true"></i>
-            </span>
-            {{user.firstName}}
-            {{user.lastName}}
-        </a>
-    </div>
-    <div *ngIf="showUser === 'student' ">
-        <a class="panel-block is-active" *ngFor="let user of studentUser">
+    <div>
+        <a class="panel-block is-active" *ngFor="let user of users">
             <span class="panel-icon">
                 <i class="fas fa-book" aria-hidden="true"></i>
             </span>

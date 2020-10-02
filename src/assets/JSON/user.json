@@ -1,0 +1,42 @@
+{
+    "users": [
+        {
+            "email": "pritvi@",
+            "password": "hash",
+            "first_name": "Pritvi",
+            "last_name": "Majumder",
+            "role_id": 2
+        },
+        {
+            "email": "pritam@",
+            "password": "hash",
+            "first_name": "Pritam",
+            "last_name": "Roy",
+            "role_id": 2
+        },
+        {
+            "email": "consilious@",
+            "password": "hash",
+            "first_name": "Consilious",
+            "last_name": "Systems",
+            "role_id": 1
+        }
+    ],
+    "roles": [
+        {
+            "id": 1,
+            "name": "Teacher",
+            "description": "Some description"
+        },
+        {
+            "id": 2,
+            "name": "Student",
+            "description": "Some description"
+        },
+        {
+            "id": 3,
+            "name": "Admin",
+            "description": "Some description"
+        }
+    ]
+}

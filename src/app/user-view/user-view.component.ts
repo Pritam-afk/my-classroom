@@ -8,22 +8,27 @@ import { UserService } from "../services/user.service";
 })
 export class UserViewComponent implements OnInit {
 
-  public userView = [];
-  public teacherUser = [];
-  public studentUser = [];
-  public showUser:string;
+  public users = [];
+  public teachers = [];
+  public students = [];
+  public showUser: string;
 
   constructor(
     private userService: UserService,
   ) { }
 
   ngOnInit(): void {
-    this.userView = this.userService.users;
-    this.showUser = "all";
+    this.users = this.userService.users;
+    this.showUser = 'all';
   }
 
-  showAll() {
-    this.showUser = "all";
+  public setView(role: string) {
+    if (role == 'all') {
+      this.users = this.userService.users;
+    } else {
+      this.users = this.userService.users.filter(user => user.role.name === role);
+    }
   }
+
 }
 

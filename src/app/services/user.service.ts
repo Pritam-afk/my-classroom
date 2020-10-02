@@ -1,65 +1,35 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { element } from 'protractor';
 import { Role } from '../login/role.model';
 import { User } from '../login/user.model';
+import user from "../../assets/JSON/user.json";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private roles: Role[] = [];
+  public roles: Role[] = [];
   public users: User[] = [];
-  private seedData = {
-    users: [
-      {
-        email: 'pritvi@',
-        password: 'hash',
-        first_name: 'Pritvi',
-        last_name: 'Majumder',
-        role_id: 2
-      },
-      {
-        email: 'pritam@',
-        password: 'hash',
-        first_name: 'Pritam',
-        last_name: 'Roy',
-        role_id: 2
-      },
-      {
-        email: 'consilious@',
-        password: 'hash',
-        first_name: 'Consilious',
-        last_name: 'Systems',
-        role_id: 1
-      },
-    ],
-    roles: [{
-      id: 1,
-      name: 'Teacher',
-      description: 'Some description'
-    },
-    {
-      id: 2,
-      name: 'Student',
-      description: 'Some description'
-    },
-    {
-      id: 3,
-      name: 'Admin',
-      description: 'Some description'
-    }]
-  };
+  private seedData;
+
   constructor() {
-    this.seedData.roles.forEach(element => {
+    this.intializeSeedData();
+  }
+
+  private async intializeSeedData() {
+    this.seedData = await user;
+    console.log(this.seedData);
+    for await (const element of this.seedData.roles) {
       const role = new Role(
         element.id,
         element.name,
         element.description,
-      )
+      );
       this.roles.push(role);
-    });
-    this.seedData.users.forEach(element => {
+    }
+    for await (const element of this.seedData.users) {
       const user = new User(
         element.email,
         element.password,
@@ -67,9 +37,8 @@ export class UserService {
         element.last_name,
         this.getRoleById(element.role_id)
       );
-
       this.users.push(user);
-    });
+    }
     console.log(this.users);
   }
 
@@ -80,4 +49,8 @@ export class UserService {
     }
   }
 
+  userResgistration(user:User) {
+    this.users.push(user);
+    localStorage.setItem('VERIFIED_USER', JSON.stringify(user));
+  }
 }

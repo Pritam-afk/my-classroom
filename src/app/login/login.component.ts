@@ -21,9 +21,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
-    localStorage.removeItem('VERIFIED_USER');
-  }
+  ngOnInit(): void {}
 
   private routeDashboard(user: User) {
     this.router.navigate(['/dashboard/' + user.role]);
