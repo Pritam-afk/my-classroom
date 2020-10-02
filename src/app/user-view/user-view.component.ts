@@ -12,6 +12,9 @@ export class UserViewComponent implements OnInit {
   public teacherUser = [];
   public studentUser = [];
   public showUser:string;
+  public stars = [1, 2, 3, 4, 5];
+  public rating = 0;
+  public hoverState = 0;
 
   constructor(
     private userService: UserService,
@@ -25,5 +28,18 @@ export class UserViewComponent implements OnInit {
   showAll() {
     this.showUser = "all";
   }
+
+  onStarEnter(starId: number) {
+    this.hoverState = starId;
+  }
+  
+  onStarLeave() {
+    this.hoverState = 0;
+  }
+
+  onStarClicked(starId: number) {
+    this.hoverState = starId;
+  }
+
 }
 

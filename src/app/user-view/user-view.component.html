@@ -12,8 +12,8 @@
     </div>
     <p class="panel-tabs">
         <a class="is-active" (click)="showAll()">All</a>
-        <a (click)="filterTeacher()">Teachers</a>
-        <a (click)="filterStudents()">Students</a>
+        <a>Teachers</a>
+        <a>Students</a>
     </p>
     <div *ngIf="showUser === 'all' ">
         <a class="panel-block is-active" *ngFor="let user of userView">
@@ -47,4 +47,7 @@
             Reset all filters
         </button>
     </div>
+    <ng-container *ngFor = "let star of stars">
+        <app-star (starEnter)= "onStarEnter($event)" (starLeave)= "onStarLeave()" (starEnter)= "onStarClicked($event)" [starId] = "star" [rating] = "rating || hoverState"></app-star>
+        </ng-container>
 </nav>
