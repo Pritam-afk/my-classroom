@@ -20,7 +20,7 @@ export class StarComponent implements OnInit {
   }
 
   onStarEnter() {
-    this.starEnter.emit();
+    this.starEnter.emit(this.starId);
   }
   
   onStarLeave() {

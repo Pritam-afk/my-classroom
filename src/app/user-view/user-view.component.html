@@ -23,6 +23,7 @@
             {{user.firstName}}
             {{user.lastName}}
         </a>
+        
     </div>
     <div *ngIf="showUser === 'teacher' ">
         <a class="panel-block is-active" *ngFor="let user of teacherUser">
@@ -47,7 +48,7 @@
             Reset all filters
         </button>
     </div>
-    <ng-container *ngFor = "let star of stars">
-        <app-star (starEnter)= "onStarEnter($event)" (starLeave)= "onStarLeave()" (starEnter)= "onStarClicked($event)" [starId] = "star" [rating] = "rating || hoverState"></app-star>
+    <ng-container *ngFor = "let star of stars;">
+        <app-star (starEnter)= "onStarEnter($event)" (starLeave)= "onStarLeave()" (starEnter)= "onStarClick($event)" [starId] = "star" [rating] = "rating || hoverState"></app-star>
         </ng-container>
 </nav>
