@@ -35,6 +35,10 @@ export class User {
         this._lastName = value;
     }
 
+    get fullName() {
+        return `${this._firstName} ${this._lastName}`;
+    }
+
     get lastName() {
         return this._lastName;
     }

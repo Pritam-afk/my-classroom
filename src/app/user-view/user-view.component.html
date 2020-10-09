@@ -4,19 +4,18 @@
     </p>
     <div class="panel-block">
         <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Search">
+            <input class="input" type="text" placeholder="Search" (input) = "searchUser($event)">
             <span class="icon is-left">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </span>
         </p>
     </div>
-    <p class="panel-tabs">
-        <a class="is-active" (click) = "setView('all')">All</a>
-        <a (click) = "setView('Teacher')">Teachers</a>
-        <a (click) = "setView('Student')">Students</a>
+    <p class="panel-tabs" >
+        <a class="is-active" (click) = "setView(0)">All</a>
+        <a *ngFor="let role of roles" (click)=setView(role.id)>{{role.name}}</a>
     </p>
     <div>
-        <a class="panel-block is-active" *ngFor="let user of users">
+        <a class="panel-block is-active" *ngFor="let user of filteredUsers">
             <span class="panel-icon">
                 <i class="fas fa-book" aria-hidden="true"></i>
             </span>

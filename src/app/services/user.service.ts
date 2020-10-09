@@ -53,4 +53,15 @@ export class UserService {
     this.users.push(user);
     localStorage.setItem('VERIFIED_USER', JSON.stringify(user));
   }
+
+  // public searchUser(event: any) {
+  //   let searchedUser = (<HTMLInputElement>event.target).value;
+  //   if(searchedUser && searchedUser.trim() != '')
+  //   {
+  //       this.users = this.users.filter((user)=>{
+  //           return (this.users.role.toLowerCase().indexOf(searchedUser.toLowerCase())>-1)
+  //       })
+  //   }
+  // }
 }
+
