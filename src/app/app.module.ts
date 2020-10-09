@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { SignupComponent } from './signup/signup.component';
+import { StarComponent } from './star/star.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { SignupComponent } from './signup/signup.component';
     NavbarComponent,
     UserViewComponent,
     SignupComponent,
+    StarComponent,
   ],
   imports: [
     BrowserModule,
