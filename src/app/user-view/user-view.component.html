@@ -4,7 +4,7 @@
     </p>
     <div class="panel-block">
         <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Search" (input) = "searchUser($event)">
+            <input class="input" type="text" placeholder="Search" (input)="searchUser($event)">
             <span class="icon is-left">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </span>
@@ -19,8 +19,13 @@
             <span class="panel-icon">
                 <i class="fas fa-book" aria-hidden="true"></i>
             </span>
-            {{user.firstName}}
-            {{user.lastName}}
+            {{user.fullName}}
+            <span 
+                class="is-pulled-right is-size-7 has-text-grey ml-4"
+                *ngIf="currentRole == null"
+            >
+                ({{user.role.name}})
+            </span>
         </a>
     </div>
     <div class="panel-block">

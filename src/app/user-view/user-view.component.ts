@@ -17,7 +17,7 @@ export class UserViewComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-  ) { 
+  ) {
     this.roles = this.userService.roles;
   }
 
@@ -37,15 +37,17 @@ export class UserViewComponent implements OnInit {
 
   public searchUser(event: Event) {
     let searchedQuery = (<HTMLInputElement>event.target).value;
-    if(searchedQuery && searchedQuery.trim().length)
-    {
-        this.filteredUsers = this.userService.users.filter((user : User) =>{
-          return (user.fullName.toLowerCase().indexOf(searchedQuery.toLowerCase())>-1 && user.role.id == this.currentRole.id) 
-        })
-    }
-    else{
-      this.filteredUsers = this.userService.users.filter(user => this.currentRole.id == user.role.id);
-    }
+
+    this.filteredUsers = (searchedQuery && searchedQuery.trim().length)
+      ? this.getFilteredUsers(searchedQuery, this.currentRole)
+      : this.userService.users.filter(user => this.currentRole.id == user.role.id);
+  }
+
+  private getFilteredUsers(searchedQuery: string, role: Role) {
+    return this.userService.users.filter((user: User) => {
+      const formattedName = user.fullName.toLowerCase();
+      return (formattedName.indexOf(searchedQuery.toLowerCase()) > -1 && user.role.id == role.id)
+    });
   }
 
 }
