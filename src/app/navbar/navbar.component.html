@@ -1,7 +1,6 @@
 <nav class="navbar is-link" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-            data-target="navbar-menu">
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -12,7 +11,8 @@
             <a class="navbar-item">
                 Home
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item"
+                (click)="openUserModal(verifiedUser._firstName, verifiedUser._role._name, verifiedUser._email_, verifiedUser._role._description)">
                 My Profile
             </a>
             <div class="navbar-item has-dropdown is-hoverable">
@@ -32,7 +32,29 @@
                 </div>
             </div>
         </div>
-
+        <div class="modal is-active" *ngIf="isModalOpen">
+            <div class="modal-background" (click)="closeUserModal()"></div>
+            <div class="modal-card">
+                <header class="modal-card-head has-background-link">
+                    <p class="modal-card-title has-text-white">{{userName}}</p>
+                    <button class="delete" aria-label="close" (click)="closeUserModal()"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div>
+                        Role: {{userRole}}
+                    </div>
+                    <div>
+                        Email: {{userEmail}}
+                    </div>
+                    <div>
+                        Description: {{userDescription}}
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button" (click)="closeUserModal()">Cancel</button>
+                </footer>
+            </div>
+        </div>
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">

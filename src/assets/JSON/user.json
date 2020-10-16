@@ -19,6 +19,13 @@
             "password": "hash",
             "first_name": "Consilious",
             "last_name": "Systems",
+            "role_id": 3
+        },
+        {
+            "email": "souvik@",
+            "password": "hash",
+            "first_name": "Souvik",
+            "last_name": "Roy",
             "role_id": 1
         }
     ],
@@ -26,17 +33,17 @@
         {
             "id": 1,
             "name": "Teacher",
-            "description": "Some description"
+            "description": "He teaches computer science"
         },
         {
             "id": 2,
             "name": "Student",
-            "description": "Some description"
+            "description": "He studies in college"
         },
         {
             "id": 3,
             "name": "Admin",
-            "description": "Some description"
+            "description": "He manages the teachers and students"
         }
     ]
 }

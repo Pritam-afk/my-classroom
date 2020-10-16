@@ -10,10 +10,14 @@ import { UserService } from "../services/user.service";
   styleUrls: ['./user-view.component.scss']
 })
 export class UserViewComponent implements OnInit {
-  public showUser: string;
   public filteredUsers: User[] = [];
   public roles: Role[] = [];
   public currentRole: Role;
+  public isModalOpen: boolean = false;
+  public name: string = "";
+  public userRole: string = "";
+  public userEmail: string = "";
+  public userDescription: string = "";
 
   constructor(
     private userService: UserService,
@@ -50,5 +54,20 @@ export class UserViewComponent implements OnInit {
     });
   }
 
+  public openModal(name: string, userRole: string, userEmail: string, userDescription: string) {
+    this.isModalOpen = true;
+    this.name = name;
+    this.userRole = userRole;
+    this.userEmail = userEmail;
+    this.userDescription = userDescription;
+  }
+
+  public closeModal() {
+    this.isModalOpen = false;
+    this.name = "";
+    this.userRole = "";
+    this.userEmail = "";
+    this.userDescription = "";
+  }
 }
 
